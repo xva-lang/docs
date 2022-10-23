@@ -15,6 +15,19 @@ let number: int = 0
 let unassigned_variable
 ```
 
+> The colon (`:`) after the variable name indicates the start of an **annotation**. We'll talk more about annotations in a later section.
+
+Variables can also be assigned with the values of other variables:
+
+`src/main.xva:`
+```xva
+let mutable first_number = 3
+let second_number = 4
+first_number = second_number
+```
+
+The above code snippet simply copies the contents of `second_number` into the slot reserved for `first_number`, so that the value of `first_number` is now `4`.
+
 ## Mutability
 Xva treats variables a little bit differently than most languages. When a variable is declared, it is automatically **immutable**. 
 
@@ -36,19 +49,17 @@ What if we do want to change the value? We must tell Xva that we intend to chang
 
 `src/main.xva:`
 ```xva
-let number: mutable = 123
+let mutable number = 123
 number = 246
 ```
 
 By adding the `mutable` keyword, we tell the compiler that we intend to re-assign different values to the variable named `number`.
-
-> The colon (`:`) after the variable name indicates the start of an **annotation**. We'll talk more about annotations in a later section.
 
 ### What's the point?
 The reason Xva has this behaviour is actually two reasons:
 1. Safety
 2. Clarity of intention
 
-The first reason, safety, is due to the fact that Xva guarantees that a variable won't change if it isn't **expected** to change. This is ideal for the programmer, because unintentionally modifying a variable could lead to a bug in your program. Xva makes this kind of bug less common by making you specify whether you intend to change this variable's value further along in the program. Additionally, Xva can make some internal optimisations with immutable variables, because it knows that the value will be assigned once and never change.
+The first reason, safety, is due to the fact that Xva guarantees that a variable's value won't change if it isn't **expected** to change. This is ideal for the programmer, because unintentionally modifying a variable could lead to a bug in your program. Xva makes this kind of bug less common by making you specify whether you intend to change this variable's value further along in the program. Additionally, Xva can make some internal optimisations with immutable variables, because it knows that the value will be assigned once and never change.
 
 Which leads us to the second reason, clarity of intention. We just spoke about how the concept of immutable-by-default helps the programmer (and Xva itself), but it also forms a kind of self-documenting code. When you see a variable declared with `mutable`, this is a big hint to you, and potentionally other programmers who work with your code, that you are planning to modify this variable later in the program. 
