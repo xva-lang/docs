@@ -1,8 +1,7 @@
-[< Back to top](../README.md)
-
 # Basic Concepts
-This section covers basic programming concepts and how they are used in Xva. 
 
-## Contents
-1. [Variables](variables.md)
-2. [Types](types.md)
+This chapter covers basic programming concepts and how they are used in Xva. In this chapter, we'll discuss:
+
+- Variables,
+- Types, and
+- Some of the built-in types Xva offers
