@@ -48,11 +48,11 @@ The second line contains an assignment of a new value to the variable named `num
 What if we **do** want to be able to change a variable more than once? We must tell Xva that we intend to do so. We modify the declaration slightly to make the variable **mutable**:
 
 ```xva
-let mutable number = 123
+var number = 123
 number = 246
 ```
 
-By adding the `mutable` keyword, we tell the compiler that we intend to re-assign different values to the variable named `number`.
+By replacing the `let` keyword with the `var` keyword, we tell the compiler that we intend to re-assign different values to the variable named `number`.
 
 ### Why is this necessary?
 
