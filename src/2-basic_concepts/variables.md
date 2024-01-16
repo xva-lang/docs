@@ -21,7 +21,7 @@ Note the lack of `=` on the third line. We can _declare_ variables and _initiali
 Variables can also be assigned the values of other variables:
 
 ```xva
-let mutable first_number = 3
+var first_number = 3
 let second_number = 4
 first_number = second_number
 ```
@@ -30,7 +30,7 @@ The above code snippet simply copies the contents of `second_number` into the sl
 
 ## Mutability
 
-In the above code snippet, you may have noticed the word `mutable` just before the name of `first_number` in that declaration. When a variable is declared, that variable is **immutable**.
+In the above code snippet, you may have noticed the word `var` just before the name of `first_number` in that declaration. When a variable is declared, that variable is **immutable**.
 
 > immutable: _not capable of or susceptible to change_
 
@@ -59,11 +59,11 @@ By replacing the `let` keyword with the `var` keyword, we tell the compiler that
 The reason Xva has this mutability behaviour is actually two reasons:
 
 1. Safety
-2. Clarity of intention
+2. Clarity
 
 The first reason, safety, is due to the fact that Xva guarantees that a variable's value won't change if it isn't **expected** to change. This is ideal for the programmer, because unintentionally modifying a variable could lead to a bug in your program. Xva makes this kind of bug less common by making you specify whether you intend to change this variable's value further along in the program. Additionally, Xva can make some internal optimisations with immutable variables, because it knows that the value will be assigned once and never change.
 
-Which leads us to the second reason, clarity of intention. We just spoke about how the concept of immutable-by-default helps the programmer (and Xva itself), but it also forms a kind of self-documenting code. When you see a variable declared with `mutable`, this is a big hint to you, and potentionally other programmers who work with your code, that you are planning to modify this variable later in the program.
+Which leads us to the second reason, clarity of intention. We just spoke about how the concept of immutable-by-default helps the programmer (and Xva itself), but it also serves as automatic documentation for your code. When you see a variable declared with `var`, this is a big hint to you, and potentionally other programmers who work with your code, that you are planning to modify this variable later in the program.
 
 ## Constants
 
