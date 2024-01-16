@@ -1,0 +1,36 @@
+
+// Unit structs
+data UnitStruct
+
+// Tuple structs
+data TupleStruct(int, int)
+
+// Named structs
+data NamedStruct {
+    field1: int,
+	field2: int
+}
+
+// Sum types
+data SumType {
+    Unit,
+    Tuple(int, string),
+    Named {
+        data: int,
+        data2: string
+    },
+}
+
+let unit_struct = UnitStruct
+let tuple_struct = TupleStruct(1, "2")
+let named_struct = NamedStruct {
+    field1 = 1,
+    field2 = 2
+}
+
+let sum_unit = SumType.Unit
+let sum_tuple = SumType.Tuple(1, 2)
+let sum_named = SumType.Named {
+    data: 1,
+    data2: "string"
+}
