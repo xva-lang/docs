@@ -1,12 +1,31 @@
 # xva-docs
-Xva Documentation
+This is Markdown repository for the [Xva documentation](https://docs.xva-lang.org).
 
-## Introduction
-Xva is a statically-typed, compile-time checked and interpreted programming language that strives to help you write safe, efficient and readable code. Xva is designed to be accessible for all, even those who have never touched any kind of programming before.
+## Contributing
+The Xva documentation is an [mdBook](https://rust-lang.github.io/mdBook/) repository. mdBook itself is a Cargo utility. 
 
-Throughout this documentation, we will provide examples of how Xva works, the reasons behind different features, and some recommendations on how to write the best Xva code you can. There are some references to the word *compiler* in this book however, at its current version, Xva is still interpreted. The meaning of the word *compiler* is a bit of a misnomer, but it refers to Xva's suite of compile-time checks on your code.
+### Building
+Prerequesites:
+- [Rust](https://rustup.rs/)
+- mdbook
+    - To install mdbook, run `cargo install mdbook`.
 
-We hope you enjoy learning about Xva, and have fun!
+### Previewing changes
+mdBook has a small server built in that you can use to preview your changes before they are deployed to the docs site:
+
+```bash
+mdbook serve
+```
+
+You can also run mdBook in watch mode, to have hot reloading capabilities while working on your changes:
+
+```bash
+mdbook watch
+```
+
+
+
+
 
 ## Contents
 1. [Getting started](1-getting_started/getting_started.md)
